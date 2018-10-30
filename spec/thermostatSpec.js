@@ -49,6 +49,14 @@ describe('Thermostat', function() {
       thermostat.switchPowerSavingModeOn
       expect(thermostat.isPowerSavingModeOn()).toBe(true);
     });
+    it('turns temperature down to 25 degrees if is over', function() {
+      thermostat.switchPowerSavingModeOff
+      for (var i = 0; i < 12; i++) {
+        thermostat.up();
+      }
+      thermostat.switchPowerSavingModeOn
+      expect(thermostat.currentTemperature()).toEqual(25);
+    });
   });
 
   describe('when power saving mode is on', function() {
