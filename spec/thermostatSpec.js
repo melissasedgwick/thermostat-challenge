@@ -60,7 +60,7 @@ describe('Thermostat', function() {
     });
   });
 
-  describe('when power saving mode is off', function () {
+  describe('when power saving mode is off', function() {
     it('has a maximum temperature of 32 degrees', function() {
       thermostat.switchPowerSavingModeOff()
       for (var i = 0; i < 13; i++) {
@@ -70,13 +70,31 @@ describe('Thermostat', function() {
     });
   });
 
-  describe('reset temperature', function () {
+  describe('reset temperature', function() {
     it('resets the temperature to 20 degrees', function() {
       for (var i = 0; i < 6; i++) {
         thermostat.up();
       }
       thermostat.resetTemperature()
       expect(thermostat.currentTemperature()).toEqual(thermostat.DEFAULT_TEMPERATURE);
+    });
+  });
+
+  describe('energy usage', function() {
+    it('is low usage when below 18 degrees', function() {
+      for (var i = 0; i < 3; i++) {
+        thermostat.down();
+      }
+      expect(thermostat.energyUsage()).toEqual('low-usage');
+    });
+    it('is medium usage when between 18 - 25 degrees', function() {
+      expect(thermostat.energyUsage()).toEqual('medium-usage');
+    });
+    it('is high usage when above 25 degrees', function() {
+      for (var i = 0; i < 6; i++) {
+        thermostat.up();
+      }
+      expect(thermostat.energyUsage()).toEqual('high-usage');
     });
   });
 });
