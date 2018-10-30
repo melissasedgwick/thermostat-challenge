@@ -69,4 +69,14 @@ describe('Thermostat', function() {
       expect(thermostat.currentTemperature()).toEqual(32);
     });
   });
+
+  describe('reset temperature', function () {
+    it('resets the temperature to 20 degrees', function() {
+      for (var i = 0; i < 6; i++) {
+        thermostat.up();
+      }
+      thermostat.resetTemperature()
+      expect(thermostat.currentTemperature()).toEqual(20);
+    });
+  });
 });
