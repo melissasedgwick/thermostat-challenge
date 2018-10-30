@@ -1,13 +1,16 @@
 $(document).ready(function() {
   var thermostat = new Thermostat();
   updateTemperatureDisplayed();
+  getImage()
   $('#temperature-up').click(function(){
     thermostat.up();
     updateTemperatureDisplayed();
+    getImage()
   });
   $('#temperature-down').click(function() {
     thermostat.down();
     updateTemperatureDisplayed();
+    getImage()
   });
 
   $('#temperature-reset').click(function() {
@@ -35,6 +38,18 @@ $(document).ready(function() {
     var formatted_city = city.split(' ').join('+');
     displayWeather(formatted_city)
   })
+
+
+  function getImage() {
+    if (thermostat.temperature < 18) {
+      document.getElementById("img").src="public/thermo_low.jpeg"
+    } else if (thermostat.temperature >= 18 &&
+      thermostat.temperature < 25) {
+      document.getElementById("img").src = "public/thermo_med.jpeg";
+    } else {
+       document.getElementById("img").src = "public/thermo_high.jpeg";
+    }
+  };
 
 
   function displayWeather(city) {
