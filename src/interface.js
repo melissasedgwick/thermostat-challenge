@@ -32,7 +32,8 @@ $(document).ready(function() {
   $('#select-city').submit(function(event) {
     event.preventDefault();
     var city = $('#current-city').val();
-    displayWeather(city)
+    var formatted_city = city.split(' ').join('+');
+    displayWeather(formatted_city)
   })
 
 
