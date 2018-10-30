@@ -17,5 +17,6 @@ cd thermostat-challenge
 
 From the project directory:
 ```
-rspec
+open SpecRunner.html
 ```
+This will open Jasmine Spec Runner in a browser.
