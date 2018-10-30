@@ -9,3 +9,15 @@
 .high-usage {
   color: red;
 }
+
+body {
+  background-image: url("background.jpg");
+  background-size: cover;
+  font-family: "Tahoma", Geneva, sans-serif;
+  text-align: center;
+}
+
+h1 {
+    color: black;
+    text-align: center;
+}
