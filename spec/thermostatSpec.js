@@ -35,4 +35,11 @@ describe('Thermostat', function() {
       expect(thermostat.currentTemperature()).toEqual(19);
     });
   });
+
+  describe('switch power saving mode off', function() {
+    it('switches power saving mode off', function() {
+      thermostat.switchPowerSavingModeOff()
+      expect(thermostat.isPowerSavingModeOn()).toBe(false);
+    });
+  });
 });
