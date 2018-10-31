@@ -23,6 +23,7 @@ $(document).ready(function() {
     thermostat.switchPowerSavingModeOn();
     $('#power-saving-status').text('on');
     updateTemperatureDisplayed();
+    getImage();
   });
 
   $('#powersaving-off').click(function() {
@@ -67,7 +68,7 @@ $(document).ready(function() {
   }
 
   function updateTemperatureDisplayed() {
-    $('#temperature').text(thermostat.temperature);
+    $('#temperature').text("Current setting: " + thermostat.temperature);
     $('#temperature').attr('class', thermostat.energyUsage());
   };
 })

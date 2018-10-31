@@ -1,17 +1,42 @@
+html, body {
+  height: 100%;
+}
+
 body {
   background-image: url("background.jpg");
   background-size: cover;
   font-family: "Tahoma", Geneva, sans-serif;
+  font-size: 20px;
   text-align: center;
+  vertical-align: middle;
 }
 
 h1 {
-    color: black;
-    text-align: center;
+  color: black;
+  text-align: center;
+}
+
+h2 {
+  color: black;
+  font-size: 25px;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+button {
+  height: 50px;
+  width: 80px;
+  font-size: 15px;
+}
+
+.on {
+  background-color: green;
+}
+
+.off {
+  background-color: red;
 }
 
 .low-usage {
@@ -28,7 +53,7 @@ h1 {
 
 .header {
   overflow: hidden;
-  text-align: right
+  text-align: right;
 }
 
 .header h1 {
@@ -39,13 +64,16 @@ h1 {
 }
 
 .column {
-    float: left;
-    width: 50%;
-    padding: 10px;
-  }
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 100%;
+  vertical-align: middle;
+}
 
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
+.row {
+  content: "";
+  /* display: table;
+  clear: both; */
+  height: 100%;
 }
