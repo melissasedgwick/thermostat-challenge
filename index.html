@@ -1,34 +1,42 @@
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" type="text/css" href="public/style.css">
-  <head>
-    <title>Thermostat</title>
-    <h1>Thermostat</h1>
-  </head>
-  <body>
-    <section>
-      <h1 id="temperature"></h1>
-      <p>
-        <button id="temperature-up">+</button>
-        <button id="temperature-down">-</button>
-        <button id="temperature-reset">Reset</button>
-        <button id="powersaving-on">PSM On</button>
-        <button id="powersaving-off">PSM Off</button>
-      </p>
-      <p>Power saving mode is <span id="power-saving-status">on</span></p>
-    </section>
-    <section>
-      <h1>Current temperature: <span id="current-temperature"></span></h1>
-      <form id="select-city">
-        <input id="current-city" type="text" placeholder="Enter a city"></input>
-        <input type="submit"></input>
-      </form>
-    </section>
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="src/interface.js"></script>
-    <script src="src/thermostat.js"></script>
-    <section>
-      <img id="img" src="#">
-    </section>
-  </body>
+  <div class="row">
+    <div class="column">
+      <head>
+        <title>Thermostat</title>
+        <div class="header">
+          <h1>Thermostat</h1>
+        </div>
+      </head>
+      <body>
+        <section>
+          <h1 id="temperature"></h1>
+          <p>
+            <button id="temperature-up">+</button>
+            <button id="temperature-down">-</button>
+            <button id="temperature-reset">Reset</button>
+            <button id="powersaving-on">PSM On</button>
+            <button id="powersaving-off">PSM Off</button>
+          </p>
+          <p>Power saving mode is <span id="power-saving-status">on</span></p>
+        </section>
+        <section>
+          <h1>Current temperature: <span id="current-temperature"></span></h1>
+          <form id="select-city">
+            <input id="current-city" type="text" placeholder="Enter a city"></input>
+            <input type="submit"></input>
+          </form>
+        </section>
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="src/interface.js"></script>
+        <script src="src/thermostat.js"></script>
+      </body>
+    </div>
+    <div class="column">
+      <section>
+        <img id="img" src="#">
+      </section>
+    </div>
+  </div>
 </html>
