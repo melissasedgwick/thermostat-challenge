@@ -5,17 +5,18 @@ $(document).ready(function() {
   $('#temperature-up').click(function(){
     thermostat.up();
     updateTemperatureDisplayed();
-    getImage()
+    getImage();
   });
   $('#temperature-down').click(function() {
     thermostat.down();
     updateTemperatureDisplayed();
-    getImage()
+    getImage();
   });
 
   $('#temperature-reset').click(function() {
     thermostat.resetTemperature();
     updateTemperatureDisplayed();
+    getImage();
   });
 
   $('#powersaving-on').click(function() {
@@ -41,13 +42,17 @@ $(document).ready(function() {
 
 
   function getImage() {
-    if (thermostat.temperature < 18) {
-      document.getElementById("img").src="public/thermo_low.jpeg"
+    if (thermostat.temperature == 10) {
+      document.getElementById("img").src="public/thermo-min.png"
+    } else if (thermostat.temperature < 18) {
+      document.getElementById("img").src="public/thermo-low.png"
     } else if (thermostat.temperature >= 18 &&
       thermostat.temperature < 25) {
-      document.getElementById("img").src = "public/thermo_med.jpeg";
+      document.getElementById("img").src = "public/thermo-med.png";
+    } else if (thermostat.temperature === 32) {
+      document.getElementById("img").src = "public/thermo-full.png";
     } else {
-       document.getElementById("img").src = "public/thermo_high.jpeg";
+       document.getElementById("img").src = "public/thermo-high.png";
     }
   };
 
