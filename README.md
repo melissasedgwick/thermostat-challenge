@@ -12,6 +12,11 @@ git clone https://github.com/melissasedgwick/thermostat-challenge
 ```
 cd thermostat-challenge
 ```
+3. Open the web application:
+```
+open index.html
+```
+This will open the thermometer interface in your browser.
 
 ## Instructions for Running Tests
 
