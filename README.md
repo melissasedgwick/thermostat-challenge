@@ -18,6 +18,13 @@ open index.html
 ```
 This will open the thermometer interface in your browser.
 
+4. Run the Sinatra app:
+```
+cd api
+rackup
+```
+5. Click the 'reset' button on Thermostat app in the browser to begin using the thermostat. 
+
 ## Instructions for Running Tests
 
 From the project directory:
