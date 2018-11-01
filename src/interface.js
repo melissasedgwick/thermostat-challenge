@@ -1,7 +1,7 @@
 $(document).ready(function() {
   var thermostat = new Thermostat();
   getTemp()
-  getImage()
+  // getImage()
 
   $('#temperature-up').click(function(){
     thermostat.up();
@@ -49,15 +49,14 @@ $(document).ready(function() {
   })
 
 
-  function getImage() {
-    if (thermostat.temperature == 10) {
+  function getImage(t = thermostat.temperature) {
+    if (t == 10) {
       document.getElementById("img").src="public/thermo-min.png"
-    } else if (thermostat.temperature < 18) {
+    } else if (t < 18) {
       document.getElementById("img").src="public/thermo-low.png"
-    } else if (thermostat.temperature >= 18 &&
-      thermostat.temperature < 25) {
+    } else if (t >= 18 && t < 25) {
       document.getElementById("img").src = "public/thermo-med.png";
-    } else if (thermostat.temperature === 32) {
+    } else if (t === 32) {
       document.getElementById("img").src = "public/thermo-full.png";
     } else {
        document.getElementById("img").src = "public/thermo-high.png";
@@ -69,6 +68,7 @@ $(document).ready(function() {
       $('#temperature').text("Current setting: " + data.temp);
       thermostat.temperature = parseInt(data.temp);
       $('#temperature').attr('class', thermostat.energyUsage());
+      getImage(data.temp);
     });
   };
 
