@@ -1,21 +1,10 @@
 require 'sinatra/base'
 
 class Thermostat < Sinatra::Base
-  use Rack::Session::Cookie, :key => "rack.session"
-  set :session_secret, "My session secret"
-
-  get '/' do
-    headers 'Access-Control-Allow-Origin' => '*'
-    redirect '/temperature'
-  end
 
   get '/temperature' do
     headers 'Access-Control-Allow-Origin' => '*'
-    if @@temperature == nil
-      { temp: "20" }.to_json
-    else
-      { temp: @@temperature }.to_json
-    end
+    { temp: @@temperature }.to_json
   end
 
   post '/temperature' do
